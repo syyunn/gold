@@ -22,7 +22,7 @@ data = {'Date': dates,
 df = pd.DataFrame(data)
 
 
-utils.pickle_object(df, "data/KRW_USD_{}.pkl".format(period))
+utils.pickle_object(df, "data/Gold_{}.pkl".format(filename))
 
 if __name__ == "__main__":
     pass
