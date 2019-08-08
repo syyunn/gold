@@ -15,14 +15,18 @@ for line in lines:
     prices.append(price)
 
 dates = np.array(dates, dtype='datetime64[M]')
+prices = np.array(prices, dtype='float64')
 
 data = {'Date': dates,
         'Gold': prices}
 
 df = pd.DataFrame(data)
 
-
 utils.pickle_object(df, "data/Gold_{}.pkl".format(filename))
+
+data_path = "data/Gold_monthly.pkl"
+df = utils.load_pickle(data_path)
+utils.standard_plot(df)
 
 if __name__ == "__main__":
     pass
