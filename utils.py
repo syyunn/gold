@@ -16,13 +16,14 @@ def load_pickle(pickle_path):
     return python_obj
 
 
-def standard_plot(pd_dataframe):
+def standard_plot(pd_dataframe,
+                  column_name='Gold'):
     # print(pd_dataframe['Date'])
     plt.figure(figsize=(12, 6), dpi=100)
     plt.plot(pd_dataframe['Date'],
-             pd_dataframe['KRW/USD'])
+             pd_dataframe[column_name])
     plt.xlabel('Date')
-    plt.xlabel('Rates')
+    plt.ylabel(column_name)
     plt.grid()
     plt.show()
 
