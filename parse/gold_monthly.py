@@ -24,7 +24,7 @@ df = pd.DataFrame(data)
 
 utils.pickle_object(df, "data/Gold_{}.pkl".format(filename))
 
-data_path = "data/Gold_monthly.pkl"
+data_path = "data/gold_monthly.pkl"
 df = utils.load_pickle(data_path)
 utils.standard_plot(df)
 

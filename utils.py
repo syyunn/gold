@@ -3,6 +3,8 @@ import pickle
 import matplotlib.pyplot as plt
 import pandas as pd
 
+import numpy as np
+
 
 def pickle_object(python_obj, pickle_path):
     with open(pickle_path, 'wb') as f:
@@ -44,6 +46,16 @@ def concat_n_dfs(df_list):
         for df_follow in df_list[2:]:
             df_cat = concat_two_dfs([df_cat, df_follow])
         return df_cat
+
+
+def make_as_pandas_df(dates_list, content_name, content_list):
+
+    data_dict = {'Date': np.array(dates_list, dtype='datetime64[D]'),
+                 content_name: np.array(content_list, dtype='float64')}
+
+    df = pd.DataFrame(data_dict)
+
+    return df
 
 
 if __name__ == "__main__":

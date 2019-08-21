@@ -1,3 +1,4 @@
+""" Make pandas f/ yearly CPI raw data"""
 import numpy as np
 import pandas as pd
 
@@ -32,7 +33,7 @@ df = pd.DataFrame(data)
 
 utils.pickle_object(df, "data/{}.pkl".format(filename))
 
-data_path = "data/CPI.pkl"
+data_path = "data/cpi_yearly.pkl"
 df = utils.load_pickle(data_path)
 utils.standard_plot(df, column_name='CPI')
 
