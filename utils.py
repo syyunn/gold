@@ -19,11 +19,16 @@ def load_pickle(pickle_path):
 
 
 def standard_plot(pd_dataframe,
-                  column_name='Gold'):
+                  column_name='Gold',
+                  scatter=False):
     # print(pd_dataframe['Date'])
     plt.figure(figsize=(12, 6), dpi=100)
-    plt.plot(pd_dataframe['Date'],
-             pd_dataframe[column_name])
+    if not scatter:
+        plt.plot(pd_dataframe['Date'],
+                 pd_dataframe[column_name])
+    if scatter:
+        plt.scatter(pd_dataframe['Date'],
+                    pd_dataframe[column_name])
     plt.xlabel('Date')
     plt.ylabel(column_name)
     plt.grid()
